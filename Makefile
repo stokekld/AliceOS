@@ -1,6 +1,8 @@
 B=bash
 DIR=./scripts
 
+all: checksys createtree download compilation
+
 checksys:
 	$(B) $(DIR)/check-system.sh
 
@@ -14,5 +16,5 @@ compilation:
 	$(B) $(DIR)/compilation.sh
 
 clean:
-	rm -rf $(LFS)
+	rm -rf $(TOOLS)
 	rm -rf $(BUILD)

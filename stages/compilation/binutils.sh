@@ -16,6 +16,10 @@ cd build
     --disable-nls \
     --disable-werror
 
-make
+make -j4
+
+case $(uname -m) in
+     x86_64) mkdir -v $TOOLS/lib && ln -sv lib $TOOLS/lib64 ;;
+esac
 
 make install
